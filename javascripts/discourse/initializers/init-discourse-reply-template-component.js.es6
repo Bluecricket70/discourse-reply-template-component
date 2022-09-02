@@ -120,6 +120,78 @@ function openComposerWithTemplateAndAction(controller, post, wrap) {
 
     const replacers = [
       {
+        regex: /(\=PLATFORM=)/g,
+        fn: () => {
+          const placeholderIdentifier = `${postIdentifier}PLATFORM`;
+          console.log(window.localStorage.getItem(`${STORAGE_PREFIX}${placeholderIdentifier}`).value);
+          return window.localStorage.getItem(`${STORAGE_PREFIX}${placeholderIdentifier}`).value || placeholderIdentifier;
+        }
+      },
+      {
+        regex: /(\=STOREFRONT=)/g,
+        fn: () => {
+          const placeholderIdentifier = `${postIdentifier}STOREFRONT`;
+          console.log(window.localStorage.getItem(`${STORAGE_PREFIX}${placeholderIdentifier}`).value);
+          return window.localStorage.getItem(`${STORAGE_PREFIX}${placeholderIdentifier}`).value || placeholderIdentifier;
+        }
+      },
+        {
+        regex: /(\=ISSUE TYPE=)/g,
+        fn: () => {
+          const placeholderIdentifier = `${postIdentifier}ISSUE TYPE`;
+          console.log(window.localStorage.getItem(`${STORAGE_PREFIX}${placeholderIdentifier}`).value);
+          return window.localStorage.getItem(`${STORAGE_PREFIX}${placeholderIdentifier}`).value || placeholderIdentifier;
+        }
+      },
+       {
+        regex: /(\=GAME MODE=)/g,
+        fn: () => {
+          const placeholderIdentifier = `${postIdentifier}GAME MODE`;
+          console.log(window.localStorage.getItem(`${STORAGE_PREFIX}${placeholderIdentifier}`).value);
+          return window.localStorage.getItem(`${STORAGE_PREFIX}${placeholderIdentifier}`).value || placeholderIdentifier;
+        }
+      },
+       {
+        regex: /(\=SERVER TYPE=)/g,
+        fn: () => {
+          const placeholderIdentifier = `${postIdentifier}SERVER TYPE`;
+          console.log(window.localStorage.getItem(`${STORAGE_PREFIX}${placeholderIdentifier}`).value);
+          return window.localStorage.getItem(`${STORAGE_PREFIX}${placeholderIdentifier}`).value || placeholderIdentifier;
+        }
+      },
+       {
+        regex: /(\=SERVER NAME=)/g,
+        fn: () => {
+          const placeholderIdentifier = `${postIdentifier}SERVER NAME`;
+          console.log(window.localStorage.getItem(`${STORAGE_PREFIX}${placeholderIdentifier}`).value);
+          return window.localStorage.getItem(`${STORAGE_PREFIX}${placeholderIdentifier}`).value || placeholderIdentifier;
+        }
+      },
+       {
+        regex: /(\=MODS=)/g,
+        fn: () => {
+          const placeholderIdentifier = `${postIdentifier}MODS`;
+          console.log(window.localStorage.getItem(`${STORAGE_PREFIX}${placeholderIdentifier}`).value);
+          return window.localStorage.getItem(`${STORAGE_PREFIX}${placeholderIdentifier}`).value || placeholderIdentifier;
+        }
+      },
+            {
+        regex: /(\=BUG DESCRIPTION=)/g,
+        fn: () => {
+          const placeholderIdentifier = `${postIdentifier}BUG DESCRIPTION`;
+          console.log(window.localStorage.getItem(`${STORAGE_PREFIX}${placeholderIdentifier}`).value);
+          return window.localStorage.getItem(`${STORAGE_PREFIX}${placeholderIdentifier}`).value || placeholderIdentifier;
+        }
+      },
+            {
+        regex: /(\=BUG REPRO=)/g,
+        fn: () => {
+          const placeholderIdentifier = `${postIdentifier}BUG REPRO`;
+          console.log(window.localStorage.getItem(`${STORAGE_PREFIX}${placeholderIdentifier}`).value);
+          return window.localStorage.getItem(`${STORAGE_PREFIX}${placeholderIdentifier}`).value || placeholderIdentifier;
+        }
+      },
+      {
         regex: /(\$today)/g,
         fn: () => {
           const date = moment().startOf("day");
